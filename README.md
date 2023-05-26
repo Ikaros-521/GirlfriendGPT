@@ -18,14 +18,14 @@ Click the image below for a demo:
 
 ## Getting started 
 
-To run your companion locally:
+安装环境，启动main.py可以测试steamship的功能。To run your companion locally:
 ```
 pip install -r requirements.txt
 python main.py 
 ```
 
 To deploy your companion & connect it to Telegram:
-运行后会提示相关的配置，需要注意的是handle的配置就是你tg设置的bot的唯一用户名  
+运行后会提示相关的配置，需要注意的是handle的配置就是你tg设置的bot的唯一用户名。跑完后就直接和你的bot关联了，没项目啥事了，给力。  
 ```
 python deploy.py 
 ```
