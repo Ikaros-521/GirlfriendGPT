@@ -25,6 +25,10 @@ python main.py
 ```
 
 To deploy your companion & connect it to Telegram:
+运行后会提示相关的配置，需要注意的是handle的配置就是你tg设置的bot的唯一用户名  
+```
+python deploy.py 
+```
 
 You will need to fetch a Telegram key to connect your companion to Telegram. [This guide](/docs/register-telegram-bot.md) will show you how.
 
