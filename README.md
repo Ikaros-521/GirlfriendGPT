@@ -25,13 +25,14 @@ python main.py
 ```
 
 To deploy your companion & connect it to Telegram:
-运行后会提示相关的配置，需要注意的是handle的配置就是你tg设置的bot的唯一用户名。跑完后就直接和你的bot关联了，没项目啥事了，给力。  
+运行后会提示相关的配置，需要注意的是handle的配置需要是steamship没被使用过的一个字符串，可以自行编造。跑完后就直接和你的bot关联了，没项目啥事了，给力。  
 ```
 python deploy.py 
 ```
 
 You will need to fetch a Telegram key to connect your companion to Telegram. [This guide](/docs/register-telegram-bot.md) will show you how.
 
+需要注意的是，如果你第一次配置handle失败后，配置会写入本地的`steamship.json`配置文件，你可以手动修改配置文件。  
 
 ## Roadmap
 * Memories: Soon, the AI will have the capability to remember past interactions, improving conversational context and depth.
