@@ -46,10 +46,12 @@ Pull requests are welcome. For major changes, please open an issue first to disc
   <br>
 Do you have a unique personality in mind for our AI model, GirlfriendGPT? Great! Here's a step-by-step guide on how to add it.
 
-## Step 1: Define Your Personality
-First, you'll need to define your personality. This is done by creating a new Python file in the src/personalities directory.
+## Step 1: 定义你的个性 / Define Your Personality
+首先，你需要定义你的个性。这是通过在“src/personalities”目录中创建一个新的Python文件来完成的。
+First, you'll need to define your personality. This is done by creating a new Python file in the `src/personalities` directory.
 
-For example, if your personality is named "jane", you would create a file called `jane.py`. Inside this file, you would define the characteristics and behaviors that embody "jane". This could include her speaking style, responses to certain inputs, or any other defining features you envision.
+例如，如果你的个性被命名为"lucas"，你会创建一个名为"lucas.py"的文件。在这个文件中，你会定义体现"lucas"的特征和行为。这可能包括她的说话风格、对某些输入的反应，或者你设想的任何其他定义特征。  
+For example, if your personality is named "lucas", you would create a file called `lucas.py`. Inside this file, you would define the characteristics and behaviors that embody "lucas". This could include her speaking style, responses to certain inputs, or any other defining features you envision.
 
 
 ## Step 2: Update __init__.py
@@ -61,16 +63,17 @@ Import your new personality at the top of the file and add your personality to t
 ```python
 from .luna import luna
 from .sacha import sacha
-from .lucas import lucas  # This is your new personality
+from .lucas import lucas  # 导入你的人格文件 This is your new personality
 
 __all__ = [
     "sacha",
     "luna",
-    "lucas",  # Add your personality here
+    "lucas",  # 添加你的人格名 Add your personality here
     "get_personality"
 ]
 ```
 
+最后，将您的个性添加到get_personality()函数中：
 Lastly, add your personality to the get_personality() function:
 
 ```python
@@ -79,7 +82,7 @@ def get_personality(name: str):
         return {
             "luna": luna,
             "sacha": sacha,
-            "lucas": lucas  # Add your personality here
+            "lucas": lucas  #  添加你的人格名 Add your personality here
         }[name]
     except Exception:
         raise Exception("The personality you selected does not exist!")
@@ -87,8 +90,15 @@ def get_personality(name: str):
 
 And that's it! Now, whenever the `get_personality` function is called with the name of your personality, it will return the behaviors and characteristics defined in your personality file.
 
+修改`api.py`的PERSONALITY为你get_personality()函数中设置的name字符串。  
+```
+PERSONALITY = "lucas"
+```
+  
 ## Step 3: Test and Submit
 
+最后，老规矩deploy.py提交代码，即可。  
+  
 Before you submit your new personality, please test it to ensure everything works as expected. If all is well, submit a Pull Request with your changes, and be sure to include the title "{name} - {description}" where {name} is your personality's name, and {description} is a brief explanation of the personality.
 
 Good luck, and we can't wait to meet your new GirlfriendGPT personality!
